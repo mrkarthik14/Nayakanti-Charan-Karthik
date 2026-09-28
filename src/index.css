@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", Menlo, Consolas, monospace;
+  --color-dark-surface: #141414;
+  --color-deep-black: #0D0D0D;
+  --color-orange-accent: #E8500A;
+  --color-off-white: #F2F0EC;
+  --color-muted-grey: #8A8A8A;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-canvas: #141414;
+  --bg-card: #0D0D0D;
+  --bg-card-secondary: #141414;
+  --bg-surface-elevated: #1A1A1A;
+  --text-primary: #F2F0EC;
+  --text-secondary: #8A8A8A;
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(255, 255, 255, 0.25);
+  --color-accent: #E8500A;
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --nav-bg: rgba(13, 13, 13, 0.92);
+}
+
+html.light {
+  color-scheme: light;
+  --bg-canvas: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-secondary: #F7F7F6;
+  --bg-surface-elevated: #F0F0EE;
+  --text-primary: #121212;
+  --text-secondary: #606060;
+  --border-subtle: rgba(0, 0, 0, 0.09);
+  --border-hover: rgba(0, 0, 0, 0.22);
+  --color-accent: #E8500A;
+  --grid-line: rgba(0, 0, 0, 0.035);
+  --nav-bg: rgba(255, 255, 255, 0.92);
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Monospace text */
+.font-technical {
+  font-family: var(--font-mono);
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #F0F0F0;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #D0D0D0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8500A;
+}
+
+/* Blinking cursor for terminal/headline */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Micro grid pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+/* Global Keyboard Accessibility: Focus-Visible Ring in Brand Orange (#E8500A) */
+:focus-visible {
+  outline: 2px solid #E8500A;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* On orange-accented containers, ensure focus indicator has contrast */
+.bg-orange-contrast :focus-visible,
+[data-theme="orange"] :focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 3px;
+}
+
+/* Smooth focus transition */
+a, button, input, textarea, select, [role="button"], [tabindex] {
+  transition-property: color, background-color, border-color, outline, box-shadow, transform;
+}
+
+
