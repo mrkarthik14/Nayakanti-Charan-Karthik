@@ -95,11 +95,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </motion.div>
 
-            {/* Step 3: Display Headline revealed line-by-line (350 -> 1100ms) */}
+            {/* Step 3: Display Headline revealed line-by-line with 3D-print physical typography (350 -> 1100ms) */}
             <h1
-              className={`text-5xl sm:text-6xl md:text-7xl xl:text-[84px] font-bold tracking-tight leading-[0.94] mb-6 select-none ${
-                isDark ? 'text-[#F2F0EC]' : 'text-[#121212]'
-              }`}
+              className="hero-typography-3d text-5xl sm:text-6xl md:text-7xl xl:text-[84px] font-bold tracking-tight leading-[0.94] mb-6 select-none"
             >
               <motion.span
                 initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 28 }}
@@ -124,7 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 className="inline-flex items-center gap-3"
               >
                 <span>DATA.</span>
-                <span className="inline-block w-4 sm:w-6 h-9 sm:h-14 bg-[#E8500A] animate-cursor-blink translate-y-[-2px]" />
+                <span className="inline-block w-4 sm:w-6 h-9 sm:h-14 bg-[#E8500A] cursor-3d-block animate-cursor-blink translate-y-[-2px]" />
               </motion.span>
             </h1>
 

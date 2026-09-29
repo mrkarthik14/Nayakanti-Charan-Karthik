@@ -17,7 +17,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onConnectClick }) => {
       setScrolled(window.scrollY > 40);
 
       // Scrollspy active section with priority check
-      const sections = ['contact', 'process', 'capabilities', 'work', 'about', 'hero'];
+      const sections = ['contact', 'process', 'capabilities', 'work', 'projects', 'about', 'hero'];
       const scrollPos = window.scrollY + 220;
 
       for (const sectionId of sections) {
@@ -42,6 +42,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onConnectClick }) => {
   }, []);
 
   const navLinks = [
+    { label: 'PROJECTS', href: '#projects', id: 'projects' },
     { label: 'WORK', href: '#work', id: 'work' },
     { label: 'ABOUT', href: '#about', id: 'about' },
     { label: 'STACK', href: '#stack', id: 'stack' },

@@ -23,6 +23,11 @@
   --color-accent: #E8500A;
   --grid-line: rgba(255, 255, 255, 0.035);
   --nav-bg: rgba(13, 13, 13, 0.92);
+
+  /* Hero 3D Typography System: 3 distinct physical layers (No glow effects) */
+  --hero-typo-primary: #F2F0EC;
+  --hero-typo-secondary-offset: #272725;
+  --hero-typo-depth-shadow: rgba(0, 0, 0, 0.75);
 }
 
 html.light {
@@ -38,6 +43,11 @@ html.light {
   --color-accent: #E8500A;
   --grid-line: rgba(0, 0, 0, 0.035);
   --nav-bg: rgba(255, 255, 255, 0.92);
+
+  /* Hero 3D Typography System: 3 distinct physical layers (No glow effects) */
+  --hero-typo-primary: #121212;
+  --hero-typo-secondary-offset: #C4BFB6;
+  --hero-typo-depth-shadow: rgba(0, 0, 0, 0.18);
 }
 
 body {
@@ -112,6 +122,28 @@ html.light ::-webkit-scrollbar-thumb {
 /* Smooth focus transition */
 a, button, input, textarea, select, [role="button"], [tabindex] {
   transition-property: color, background-color, border-color, outline, box-shadow, transform;
+}
+
+/* 
+ * Hero 3D Typography: Physical 3D-Print-Like Aesthetic
+ * Three distinct CSS layers:
+ * 1. Primary Text face (Crisp solid color)
+ * 2. 2px Offset Secondary Layer (Filament edge / mechanical extrusion wall)
+ * 3. Subtle Depth Shadow (Non-glowing ambient occlusion cast shadow)
+ */
+.hero-typography-3d {
+  color: var(--hero-typo-primary);
+  text-shadow:
+    2px 2px 0px var(--hero-typo-secondary-offset),
+    3px 4px 5px var(--hero-typo-depth-shadow);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Physical 3D printed accent cursor block */
+.cursor-3d-block {
+  box-shadow:
+    2px 2px 0px #8F2F04,
+    3px 4px 5px rgba(0, 0, 0, 0.45);
 }
 
 

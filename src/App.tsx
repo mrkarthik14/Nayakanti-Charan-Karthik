@@ -6,6 +6,7 @@ import { Hero3DCanvas } from './components/Hero3DCanvas';
 import { HeroSection } from './components/HeroSection';
 import { TechStackBand } from './components/TechStackBand';
 import { AboutSection } from './components/AboutSection';
+import { ProjectsSection } from './components/ProjectsSection';
 import { SelectedWork } from './components/SelectedWork';
 import { GitHubLinkedInSection } from './components/GitHubLinkedInSection';
 import { CapabilitiesSection } from './components/CapabilitiesSection';
@@ -95,7 +96,10 @@ export default function App() {
         {/* 01 / About Section */}
         <AboutSection />
 
-        {/* 02 / Selected Work Grid */}
+        {/* 02 / Featured AI/ML Engineering Projects Section */}
+        <ProjectsSection />
+
+        {/* 03 / Selected Work Grid */}
         <SelectedWork />
 
         {/* GitHub & LinkedIn Sections */}
